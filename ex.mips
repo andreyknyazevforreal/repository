@@ -1,0 +1,12 @@
+	addi	1	0	5	load reg1 with 5
+	addi	2	0	-1	load reg2 with -1
+start	add	1	1	2	decrement reg1
+	lw	3	0	var1	loads reg3 with value stored in var1
+	addi	3	3	-1	decrement reg3
+	sw	3	0	var1	put reg3 back (thus var1 is decremented)
+	beqz	0	1	done	goto done with reg1==0
+	beqz	0	0	start	back to start
+	add	0	0	0
+done	halt
+	.fill	start			will contain start addres (8)
+var1	.fill	32			declare a variable, initialized to 32
